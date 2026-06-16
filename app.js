@@ -91,36 +91,7 @@ function renderGoals(){
   document.getElementById('goals-bar').style.width=tp+'%';
 }
 
-var GOAL_ICONS=[
-  {emoji:'✈️',label:'Ferien'},
-  {emoji:'🚲',label:'Velo'},
-  {emoji:'🎸',label:'Instrument'},
-  {emoji:'💻',label:'Laptop'},
-  {emoji:'📱',label:'Handy'},
-  {emoji:'🎮',label:'Gaming'},
-  {emoji:'👟',label:'Schuhe'},
-  {emoji:'🏕️',label:'Trip'},
-  {emoji:'🚗',label:'Führerschein'},
-  {emoji:'🏠',label:'Wohnung'},
-  {emoji:'📚',label:'Bildung'},
-  {emoji:'🎯',label:'Ziel'},
-  {emoji:'💪',label:'Fitness'},
-  {emoji:'🎨',label:'Hobby'},
-  {emoji:'🌍',label:'Weltreise'},
-  {emoji:'🛵',label:'Moped'}
-];
-var selectedIcon='🎯';
-
-function renderGoalIconPicker(){
-  var box=document.getElementById('goal-icon-picker');
-  if(!box)return;
-  var html='';
-  GOAL_ICONS.forEach(function(ic){
-    var active=ic.emoji===selectedIcon;
-    html+='<button type="button" class="icon-pick-btn" title="'+ic.label+'" onclick="selectGoalIcon(\''+ic.emoji+'\',this)" style="width:42px;height:42px;border-radius:10px;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;background:'+(active?'#FFF0F1':'#F5F5F5')+';border:1.5px solid '+(active?'#E30613':'transparent')+'">'+ic.emoji+'</button>';
-  });
-  box.innerHTML=html;
-}
+var selectedIcon='✈️';
 
 function selectGoalIcon(emoji,el){
   selectedIcon=emoji;
@@ -132,7 +103,7 @@ function selectGoalIcon(emoji,el){
   el.style.border='1.5px solid #E30613';
 }
 
-function openGoalModal(){renderGoalIconPicker();document.getElementById('goal-modal').classList.add('open');}
+function openGoalModal(){document.getElementById('goal-modal').classList.add('open');}
 function saveGoal(){
   var n=document.getElementById('goal-name-inp').value.trim();
   var a=parseInt(document.getElementById('goal-amt-inp').value);
@@ -140,10 +111,10 @@ function saveGoal(){
   state.goals.push({name:n,target:a,emoji:selectedIcon});
   document.getElementById('goal-name-inp').value='';
   document.getElementById('goal-amt-inp').value='';
-  selectedIcon='🎯';
-  document.querySelectorAll('.icon-pick-btn').forEach(function(b){
-    b.style.background='#F5F5F5';
-    b.style.border='1.5px solid transparent';
+  selectedIcon='✈️';
+  document.querySelectorAll('.icon-pick-btn').forEach(function(b,i){
+    b.style.background=i===0?'#FFF0F1':'#F5F5F5';
+    b.style.border=i===0?'1.5px solid #E30613':'1.5px solid transparent';
   });
   document.getElementById('goal-modal').classList.remove('open');
   if(state.goals.length>=1)earnBadge('first-goal');
