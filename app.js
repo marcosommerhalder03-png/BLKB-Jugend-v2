@@ -1,4 +1,4 @@
-var state={xp:205,streak:1,level:3,sparGuthaben:2500,kontoGuthaben:1247.50,goals:[],haxxDone:[],kapitelDone:[],quizAnswered:false};
+var state={xp:205,streak:1,level:3,sparGuthaben:2500,kontoGuthaben:1247.50,goals:[],haxxDone:[],badges:[],kapitelDone:[],quizAnswered:false};
 var LEVELS=[{name:'Geld-Neuling',min:0,max:49},{name:'Spar-Starter',min:50,max:149},{name:'Money-Macher',min:150,max:299},{name:'Finanz-Profi',min:300,max:599},{name:'Money Hero',min:600,max:999},{name:'BLKB Legend',min:1000,max:9999}];
 var KAPITEL=[{id:1,title:'Was ist Geld?',karten:4,icon:'💰',color:'#FFF0F0'},{id:2,title:'Mein erstes Konto',karten:5,icon:'🏦',color:'#E6F1FB'},{id:3,title:'Clever bezahlen',karten:5,icon:'💳',color:'#EAF3DE'},{id:4,title:'Mein erster Lohn',karten:5,icon:'💼',color:'#EEEDFE'},{id:5,title:'Grosse Ziele',karten:4,icon:'🚀',color:'#E1F5EE'}];
 var HAXX=[{id:'easy10',title:'Easy-10 Hack',sub:'Zahle dich zuerst — jeden Monat',icon:'💸',bg:'#FFF3CD',tag:'SPAREN',tagBg:'#FFF3CD',tagColor:'#854F0B',text:'Überweise am Zahltag automatisch 10% deines Lohns auf dein Sparkonto. Du merkst es kaum — dein Konto schon.'},{id:'nullschulden',title:'Null-Schulden Hack',sub:'Keine Steuerüberraschungen mehr',icon:'📋',bg:'#F5F5F5',tag:'STEUERN',tagBg:'#F5F5F5',tagColor:'#555',text:'Lege jeden Monat 15-20% für Steuern zurück. Separates Konto dafür einrichten.'},{id:'dinimieti',title:'Dini-Mieti Hack',sub:'Miete max. 25% des Nettolohns',icon:'🏠',bg:'#E6F1FB',tag:'BUDGET',tagBg:'#E6F1FB',tagColor:'#185FA5',text:'Deine Miete sollte nie mehr als 25% deines Nettolohns betragen.'},{id:'fiftyfifty',title:'Fifty-Fifty Hack',sub:'Lohnerhöhung clever aufteilen',icon:'⚖️',bg:'#EEEDFE',tag:'MINDSET',tagBg:'#EEEDFE',tagColor:'#534AB7',text:'Kriegst du eine Lohnerhöhung? Hälfte sparen, Hälfte geniessen.'},{id:'ego',title:'Ego-Hack',sub:'Investiere in dich selbst',icon:'🎯',bg:'#EAF3DE',tag:'KARRIERE',tagBg:'#EAF3DE',tagColor:'#3B6D11',text:'Kurse, Bücher, Zertifikate — wer in Wissen investiert, bekommt die höchste Rendite.'},{id:'getrich',title:'Get-Rich Hack',sub:'So wächst dein Geld während du schläfst',icon:'📈',bg:'#E1F5EE',tag:'INVESTIEREN',tagBg:'#E1F5EE',tagColor:'#085041',text:'Fondssparplan einrichten: CHF 100/Mt bei 7% Rendite = nach 30 Jahren über CHF 113\'000.'}];
@@ -70,14 +70,16 @@ function startKapitel(id){
 
 function renderGoals(){
   document.getElementById('spar-total').textContent='CHF '+state.sparGuthaben.toLocaleString('de-CH');
-  var html='';var tt=0,ts=0;
+  var html='';var tt=0,ts=0;var remaining=state.sparGuthaben;
   state.goals.forEach(function(g,i){
-    var pct=Math.min(Math.round(state.sparGuthaben/g.target*100),100);
-    tt+=g.target;ts=Math.min(state.sparGuthaben,tt);
+    var allocated=Math.max(0,Math.min(remaining,g.target));
+    remaining-=allocated;
+    var pct=g.target>0?Math.min(Math.round(allocated/g.target*100),100):0;
+    tt+=g.target;ts+=allocated;
     html+='<div class="goal-item">'+
       '<div class="goal-header">'+
         '<div class="goal-icon">'+g.emoji+'</div>'+
-        '<div style="flex:1"><div class="goal-name">'+g.name+'</div><div class="goal-amounts">CHF '+Math.min(state.sparGuthaben,g.target).toLocaleString('de-CH')+' / '+g.target.toLocaleString('de-CH')+'</div></div>'+
+        '<div style="flex:1"><div class="goal-name">'+g.name+'</div><div class="goal-amounts">CHF '+allocated.toLocaleString('de-CH')+' / '+g.target.toLocaleString('de-CH')+'</div></div>'+
         '<div class="goal-pct">'+(pct>=100?'<span style="color:var(--ok)">✓</span>':pct+'%')+'</div>'+
         '<button onclick="delGoal('+i+')" style="background:none;border:none;font-size:16px;opacity:.4;cursor:pointer;margin-left:6px">🗑</button>'+
       '</div>'+
@@ -145,7 +147,7 @@ function renderHero(){
   }
   var bh='';
   BADGES.forEach(function(b){
-    var e=state.haxxDone.indexOf(b.id)>-1||badgeEarned(b.id);
+    var e=state.badges.indexOf(b.id)>-1||badgeEarned(b.id);
     bh+='<div class="badge-item '+(e?'':'locked')+'"><div class="badge-icon" style="background:'+(e?b.bg:'#F4F4F4')+'">'+b.icon+'</div><div><div class="badge-name">'+b.name+'</div><div class="badge-desc">'+b.desc+'</div></div></div>';
   });
   document.getElementById('hero-badges').innerHTML=bh;
@@ -164,7 +166,7 @@ function badgeEarned(id){
   if(id==='haxx-master'&&state.haxxDone.length>=6)return true;
   return false;
 }
-function earnBadge(id){if(state.haxxDone.indexOf(id)===-1)state.haxxDone.push(id);}
+function earnBadge(id){if(state.badges.indexOf(id)===-1)state.badges.push(id);}
 
 function renderHaxx(){
   var done=state.haxxDone.filter(function(x){return HAXX.find(function(h){return h.id===x;});}).length;
