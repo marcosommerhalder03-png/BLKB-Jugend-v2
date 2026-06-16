@@ -18,7 +18,6 @@
     <div class="hdr-avatar"><i class="ti ti-user"></i></div>
   </header>
 
-  <!-- START -->
   <div class="view active" id="view-home">
     <div class="scroll-area">
       <div class="hero-card">
@@ -32,15 +31,23 @@
         </div>
       </div>
       <div class="metric-grid">
-        <div class="metric"><div class="ml">Dein Level</div><div class="mv" id="home-level">3</div><div class="ms" id="home-level-name">Money-Macher</div></div>
-        <div class="metric"><div class="ml">Streak</div><div class="mv" id="home-streak">🔥 1</div><div class="ms">Tage in Folge</div></div>
+        <div class="metric">
+          <div class="ml" id="home-budget-lbl">XP-Fortschritt</div>
+          <div class="mv" id="home-budget-pct">37%</div>
+          <div class="ms" id="home-level-name">Money-Macher</div>
+        </div>
+        <div class="metric">
+          <div class="ml">Nächstes Ziel</div>
+          <div class="mv" id="home-goal-pct">–</div>
+          <div class="ms" id="home-goal-name">Kein Ziel gesetzt</div>
+        </div>
       </div>
       <div class="section-lbl">Nächste Aufgabe</div>
       <div class="card" style="cursor:pointer" onclick="nav('learn')">
         <div class="card-body" style="background:var(--dark);border-radius:var(--r)">
           <div style="font-size:var(--fs-label);color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px" id="home-task-kap">Kapitel 1</div>
           <div style="font-size:var(--fs-title);font-weight:700;color:#fff;margin-bottom:4px" id="home-task-title">Was ist Geld?</div>
-          <div style="font-size:var(--fs-sub);color:rgba(255,255,255,.5)" id="home-task-sub">5 Karten · ca. 3 Min</div>
+          <div style="font-size:var(--fs-sub);color:rgba(255,255,255,.5)" id="home-task-sub">4 Karten · ca. 4 Min</div>
           <div style="width:28px;height:28px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:10px"><i class="ti ti-chevron-right" style="font-size:16px;color:#fff"></i></div>
         </div>
       </div>
@@ -57,21 +64,20 @@
           <div style="font-size:var(--fs-body);font-weight:700;color:var(--dark)">CHF 2'500.00</div>
         </div>
       </div>
-      <div class="tip-card"><div class="tip-lbl">💡 Tipp</div><div class="tip-text" id="home-tip">Zahle dich zuerst: 10% des Lohns sofort aufs Sparkonto.</div></div>
+      <div class="tip-card"><div class="tip-lbl">Tipp</div><div class="tip-text" id="home-tip">Zahle dich zuerst: 10% des Lohns sofort aufs Sparkonto.</div></div>
       <div style="height:10px"></div>
     </div>
   </div>
 
-  <!-- LERNEN -->
   <div class="view" id="view-learn">
     <div class="scroll-area">
       <div class="card" style="margin:14px 16px 10px">
         <div class="card-body">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
             <span style="font-size:var(--fs-body);font-weight:700;color:var(--dark)">Gesamtfortschritt</span>
-            <span style="font-size:var(--fs-body);font-weight:700;color:var(--red)" id="learn-lbl">0 / 5 Kapitel</span>
+            <span style="font-size:var(--fs-body);font-weight:700;color:var(--red)" id="learn-progress-lbl">0 / 5 Kapitel</span>
           </div>
-          <div class="prog-wrap"><div class="prog-fill" id="learn-bar" style="width:0%"></div></div>
+          <div class="prog-wrap"><div class="prog-fill" id="learn-progress-bar" style="width:0%"></div></div>
         </div>
       </div>
       <div class="section-lbl">BLKB Finanzcoach</div>
@@ -90,11 +96,11 @@
         </div>
       </div>
       <div class="chip-row">
-        <button class="chip active" onclick="aiAskTopic('Sparen')">💰 Sparen</button>
-        <button class="chip" onclick="aiAskTopic('Anlegen')">📈 Anlegen</button>
-        <button class="chip" onclick="aiAskTopic('Karten und TWINT')">💳 Karten</button>
-        <button class="chip" onclick="aiAskTopic('Budget')">📊 Budget</button>
-        <button class="chip" onclick="aiAskTopic('Säule 3a')">🛡️ 3. Säule</button>
+        <button class="chip active" onclick="aiAskTopic('Sparen')">Sparen</button>
+        <button class="chip" onclick="aiAskTopic('Anlegen')">Anlegen</button>
+        <button class="chip" onclick="aiAskTopic('Karten und TWINT')">Karten</button>
+        <button class="chip" onclick="aiAskTopic('Budget')">Budget</button>
+        <button class="chip" onclick="aiAskTopic('Säule 3a')">3. Säule</button>
       </div>
       <div class="section-lbl">Kapitel</div>
       <div id="learn-chapters"></div>
@@ -102,7 +108,6 @@
     </div>
   </div>
 
-  <!-- SPAREN -->
   <div class="view" id="view-goals">
     <div class="scroll-area">
       <div class="hero-card">
@@ -113,10 +118,10 @@
       <div class="card" style="margin:0 16px 10px">
         <div class="card-body">
           <div style="display:flex;justify-content:space-between;margin-bottom:8px">
-            <span style="font-size:var(--fs-sub);color:var(--mid)">Gesamtfortschritt</span>
-            <span style="font-size:var(--fs-sub);font-weight:700;color:var(--dark)" id="goals-lbl">CHF 0 / 0</span>
+            <span style="font-size:var(--fs-sub);color:var(--mid)">Gesamtfortschritt Ziele</span>
+            <span style="font-size:var(--fs-sub);font-weight:700;color:var(--dark)" id="goals-total-lbl">CHF 0 / 0</span>
           </div>
-          <div class="prog-wrap"><div class="prog-fill" id="goals-bar" style="width:0%"></div></div>
+          <div class="prog-wrap"><div class="prog-fill" id="goals-total-bar" style="width:0%"></div></div>
         </div>
       </div>
       <div class="section-lbl">Meine Ziele</div>
@@ -126,35 +131,33 @@
     </div>
   </div>
 
-  <!-- HERO -->
   <div class="view" id="view-hero">
     <div class="scroll-area">
       <div class="xp-card">
-        <div class="xp-level">🔥 <span id="hero-streak">1</span> Tage in Folge</div>
-        <div class="xp-name" id="hero-lvl-name">Money-Macher</div>
-        <div style="font-size:var(--fs-sub);color:rgba(255,255,255,.5);margin-top:2px"><span id="hero-xp">205</span> XP · Level <span id="hero-lvl">3</span></div>
+        <div class="xp-level">🔥 <span id="hero-streak-days">1</span> Tage in Folge</div>
+        <div class="xp-name" id="hero-level-name">Money-Macher</div>
+        <div style="font-size:var(--fs-sub);color:rgba(255,255,255,.5);margin-top:2px"><span id="hero-xp">205</span> XP · Level <span id="hero-level">3</span></div>
         <div class="xp-bar-wrap"><div class="xp-bar-fill" id="hero-xp-bar" style="width:37%"></div></div>
         <div class="xp-next" id="hero-xp-next">95 XP bis zum nächsten Level</div>
       </div>
       <div class="section-lbl">Heute sammeln</div>
-      <div class="card"><div class="card-body" id="hero-daily"></div></div>
+      <div class="card"><div class="card-body" id="hero-daily-tasks"></div></div>
       <div class="section-lbl">Frage des Tages</div>
-      <div id="hero-quiz"></div>
+      <div id="hero-quiz-container"></div>
       <div class="section-lbl">Abzeichen</div>
       <div class="badge-grid" id="hero-badges"></div>
       <div style="height:10px"></div>
     </div>
   </div>
 
-  <!-- HAXX -->
   <div class="view" id="view-haxx">
     <div class="scroll-area">
       <div style="padding:14px 16px 4px">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
           <span style="font-size:var(--fs-sub);font-weight:700;color:var(--dark)">Dein Fortschritt</span>
-          <span style="font-size:var(--fs-sub);font-weight:700;color:var(--red)" id="haxx-lbl">0 von 6 verstanden</span>
+          <span style="font-size:var(--fs-sub);font-weight:700;color:var(--red)" id="haxx-progress-lbl">0 von 6 verstanden</span>
         </div>
-        <div class="prog-wrap"><div class="prog-fill" id="haxx-bar" style="width:0%"></div></div>
+        <div class="prog-wrap"><div class="prog-fill" id="haxx-progress-bar" style="width:0%"></div></div>
       </div>
       <div class="section-lbl">6 Hacks · Sofort umsetzbar</div>
       <div id="haxx-list"></div>
@@ -162,7 +165,6 @@
     </div>
   </div>
 
-  <!-- BOTTOM NAV -->
   <nav class="bottom-nav">
     <button class="nav-btn active" id="nav-home" onclick="nav('home')"><i class="ti ti-home nav-icon"></i><span class="nav-label">Start</span></button>
     <button class="nav-btn" id="nav-learn" onclick="nav('learn')"><i class="ti ti-book nav-icon"></i><span class="nav-label">Lernen</span></button>
@@ -172,25 +174,24 @@
   </nav>
 </div>
 
-<!-- MODAL ZIEL -->
 <div class="modal-backdrop" id="goal-modal">
   <div class="modal-sheet">
     <div class="modal-handle"></div>
     <div class="modal-title">Neues Sparziel</div>
     <label class="form-label">Icon wählen</label>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px" id="icon-picker">
-      <button type="button" class="icon-pick-btn" onclick="selectGoalIcon('✈️',this)" style="background:#FFF0F1;border:1.5px solid #E30613;border-radius:10px;padding:8px 0;font-size:22px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;font-family:inherit">✈️<span style="font-size:9px;color:#6B6B6B">Ferien</span></button>
-      <button type="button" class="icon-pick-btn" onclick="selectGoalIcon('🚲',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:10px;padding:8px 0;font-size:22px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;font-family:inherit">🚲<span style="font-size:9px;color:#6B6B6B">Velo</span></button>
-      <button type="button" class="icon-pick-btn" onclick="selectGoalIcon('🎸',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:10px;padding:8px 0;font-size:22px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;font-family:inherit">🎸<span style="font-size:9px;color:#6B6B6B">Instrument</span></button>
-      <button type="button" class="icon-pick-btn" onclick="selectGoalIcon('💻',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:10px;padding:8px 0;font-size:22px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;font-family:inherit">💻<span style="font-size:9px;color:#6B6B6B">Laptop</span></button>
-      <button type="button" class="icon-pick-btn" onclick="selectGoalIcon('📱',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:10px;padding:8px 0;font-size:22px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;font-family:inherit">📱<span style="font-size:9px;color:#6B6B6B">Handy</span></button>
-      <button type="button" class="icon-pick-btn" onclick="selectGoalIcon('🎮',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:10px;padding:8px 0;font-size:22px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;font-family:inherit">🎮<span style="font-size:9px;color:#6B6B6B">Gaming</span></button>
-      <button type="button" class="icon-pick-btn" onclick="selectGoalIcon('👟',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:10px;padding:8px 0;font-size:22px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;font-family:inherit">👟<span style="font-size:9px;color:#6B6B6B">Schuhe</span></button>
-      <button type="button" class="icon-pick-btn" onclick="selectGoalIcon('🏕️',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:10px;padding:8px 0;font-size:22px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;font-family:inherit">🏕️<span style="font-size:9px;color:#6B6B6B">Trip</span></button>
-      <button type="button" class="icon-pick-btn" onclick="selectGoalIcon('🚗',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:10px;padding:8px 0;font-size:22px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;font-family:inherit">🚗<span style="font-size:9px;color:#6B6B6B">Führerschein</span></button>
-      <button type="button" class="icon-pick-btn" onclick="selectGoalIcon('🏠',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:10px;padding:8px 0;font-size:22px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;font-family:inherit">🏠<span style="font-size:9px;color:#6B6B6B">Wohnung</span></button>
-      <button type="button" class="icon-pick-btn" onclick="selectGoalIcon('🌍',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:10px;padding:8px 0;font-size:22px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;font-family:inherit">🌍<span style="font-size:9px;color:#6B6B6B">Weltreise</span></button>
-      <button type="button" class="icon-pick-btn" onclick="selectGoalIcon('🎯',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:10px;padding:8px 0;font-size:22px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;font-family:inherit">🎯<span style="font-size:9px;color:#6B6B6B">Ziel</span></button>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:14px">
+      <button class="icon-pick-btn" onclick="selectGoalIcon('✈️',this)" style="background:#FFF0F1;border:1.5px solid #E30613;border-radius:8px;padding:8px 4px 6px;font-size:20px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;font-family:var(--font)">✈️<span style="font-size:9px;color:#6B6B6B">Ferien</span></button>
+      <button class="icon-pick-btn" onclick="selectGoalIcon('🚲',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:8px;padding:8px 4px 6px;font-size:20px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;font-family:var(--font)">🚲<span style="font-size:9px;color:#6B6B6B">Velo</span></button>
+      <button class="icon-pick-btn" onclick="selectGoalIcon('🎸',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:8px;padding:8px 4px 6px;font-size:20px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;font-family:var(--font)">🎸<span style="font-size:9px;color:#6B6B6B">Musik</span></button>
+      <button class="icon-pick-btn" onclick="selectGoalIcon('💻',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:8px;padding:8px 4px 6px;font-size:20px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;font-family:var(--font)">💻<span style="font-size:9px;color:#6B6B6B">Laptop</span></button>
+      <button class="icon-pick-btn" onclick="selectGoalIcon('📱',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:8px;padding:8px 4px 6px;font-size:20px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;font-family:var(--font)">📱<span style="font-size:9px;color:#6B6B6B">Handy</span></button>
+      <button class="icon-pick-btn" onclick="selectGoalIcon('🎮',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:8px;padding:8px 4px 6px;font-size:20px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;font-family:var(--font)">🎮<span style="font-size:9px;color:#6B6B6B">Gaming</span></button>
+      <button class="icon-pick-btn" onclick="selectGoalIcon('👟',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:8px;padding:8px 4px 6px;font-size:20px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;font-family:var(--font)">👟<span style="font-size:9px;color:#6B6B6B">Schuhe</span></button>
+      <button class="icon-pick-btn" onclick="selectGoalIcon('🏕️',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:8px;padding:8px 4px 6px;font-size:20px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;font-family:var(--font)">🏕️<span style="font-size:9px;color:#6B6B6B">Trip</span></button>
+      <button class="icon-pick-btn" onclick="selectGoalIcon('🚗',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:8px;padding:8px 4px 6px;font-size:20px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;font-family:var(--font)">🚗<span style="font-size:9px;color:#6B6B6B">Führerschein</span></button>
+      <button class="icon-pick-btn" onclick="selectGoalIcon('🏠',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:8px;padding:8px 4px 6px;font-size:20px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;font-family:var(--font)">🏠<span style="font-size:9px;color:#6B6B6B">Wohnung</span></button>
+      <button class="icon-pick-btn" onclick="selectGoalIcon('🌍',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:8px;padding:8px 4px 6px;font-size:20px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;font-family:var(--font)">🌍<span style="font-size:9px;color:#6B6B6B">Weltreise</span></button>
+      <button class="icon-pick-btn" onclick="selectGoalIcon('🎯',this)" style="background:#F5F5F5;border:1.5px solid transparent;border-radius:8px;padding:8px 4px 6px;font-size:20px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;font-family:var(--font)">🎯<span style="font-size:9px;color:#6B6B6B">Ziel</span></button>
     </div>
     <label class="form-label">Name</label>
     <input type="text" class="form-input" id="goal-name-inp" placeholder="z.B. E-Bike, Ferien...">
