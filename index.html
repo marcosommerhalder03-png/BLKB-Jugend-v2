@@ -18,152 +18,130 @@
     <div class="hdr-avatar"><i class="ti ti-user"></i></div>
   </header>
 
-  <div class="view active" id="view-home">
-    <div class="scroll-area">
-      <div class="hero-card">
-        <div class="hero-lbl">Gesamtsaldo</div>
-        <div class="hero-amt" id="home-total">CHF 3'747.50</div>
-        <div class="hero-sub">Jugendkonto + Sparkonto</div>
-        <div class="hero-mini-row">
-          <div class="hero-mini"><div class="ml">Konto</div><div class="mv" id="home-konto">1'247</div></div>
-          <div class="hero-mini"><div class="ml">Sparen</div><div class="mv" id="home-sparen">2'500</div></div>
-          <div class="hero-mini accent"><div class="ml">XP</div><div class="mv" id="home-xp">205</div></div>
-        </div>
+  <div class="view active" id="view-home"><div class="scroll-area">
+    <div class="hero-card">
+      <div class="hero-lbl">Gesamtsaldo</div>
+      <div class="hero-amt" id="home-total">CHF 3'747.50</div>
+      <div class="hero-sub">Jugendkonto + Sparkonto</div>
+      <div class="hero-mini-row">
+        <div class="hero-mini"><div class="ml">Konto</div><div class="mv" id="home-konto">1'247</div></div>
+        <div class="hero-mini"><div class="ml">Sparen</div><div class="mv" id="home-sparen">2'500</div></div>
+        <div class="hero-mini accent"><div class="ml">XP</div><div class="mv" id="home-xp">205</div></div>
       </div>
-      <div class="metric-grid">
-        <div class="metric">
-          <div class="ml" id="home-budget-lbl">XP-Fortschritt</div>
-          <div class="mv" id="home-budget-pct">37%</div>
-          <div class="ms" id="home-level-name">Money-Macher</div>
-        </div>
-        <div class="metric">
-          <div class="ml">Nächstes Ziel</div>
-          <div class="mv" id="home-goal-pct">–</div>
-          <div class="ms" id="home-goal-name">Kein Ziel gesetzt</div>
-        </div>
-      </div>
-      <div class="section-lbl">Nächste Aufgabe</div>
-      <div class="card" style="cursor:pointer" onclick="nav('learn')">
-        <div class="card-body" style="background:var(--dark);border-radius:var(--r)">
-          <div style="font-size:var(--fs-label);color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px" id="home-task-kap">Kapitel 1</div>
-          <div style="font-size:var(--fs-title);font-weight:700;color:#fff;margin-bottom:4px" id="home-task-title">Was ist Geld?</div>
-          <div style="font-size:var(--fs-sub);color:rgba(255,255,255,.5)" id="home-task-sub">4 Karten · ca. 4 Min</div>
-          <div style="width:28px;height:28px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:10px"><i class="ti ti-chevron-right" style="font-size:16px;color:#fff"></i></div>
-        </div>
-      </div>
-      <div class="section-lbl">Meine Konten <span style="font-size:9px;background:var(--warn-l);color:#92400e;padding:2px 7px;border-radius:10px;font-weight:700;margin-left:4px">DEMO</span></div>
-      <div class="card">
-        <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--border)">
-          <div style="width:36px;height:36px;border-radius:9px;background:#E6F1FB;display:flex;align-items:center;justify-content:center"><i class="ti ti-building-bank" style="font-size:18px;color:#185FA5"></i></div>
-          <div style="flex:1"><div style="font-size:var(--fs-body);font-weight:600;color:var(--dark)">Jugendkonto</div><div style="font-size:var(--fs-label);color:var(--light)">CH56 0785 1234 5678 9000 0</div></div>
-          <div style="font-size:var(--fs-body);font-weight:700;color:var(--dark)">CHF 1'247.50</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;padding:12px 14px">
-          <div style="width:36px;height:36px;border-radius:9px;background:#FFF3CD;display:flex;align-items:center;justify-content:center"><i class="ti ti-piggy-bank" style="font-size:18px;color:#854F0B"></i></div>
-          <div style="flex:1"><div style="font-size:var(--fs-body);font-weight:600;color:var(--dark)">Sparkonto Jugend</div><div style="font-size:var(--fs-label);color:var(--light)">CH56 0785 1234 5678 9001 0</div></div>
-          <div style="font-size:var(--fs-body);font-weight:700;color:var(--dark)">CHF 2'500.00</div>
-        </div>
-      </div>
-      <div class="tip-card"><div class="tip-lbl">Tipp</div><div class="tip-text" id="home-tip">Zahle dich zuerst: 10% des Lohns sofort aufs Sparkonto.</div></div>
-      <div style="height:10px"></div>
     </div>
-  </div>
+    <div class="metric-grid">
+      <div class="metric"><div class="ml" id="home-budget-lbl">XP-Fortschritt</div><div class="mv" id="home-budget-pct">37%</div><div class="ms" id="home-level-name">Money-Macher</div></div>
+      <div class="metric"><div class="ml">Nächstes Ziel</div><div class="mv" id="home-goal-pct">–</div><div class="ms" id="home-goal-name">Kein Ziel gesetzt</div></div>
+    </div>
+    <div class="section-lbl">Nächste Aufgabe</div>
+    <div class="card" style="cursor:pointer" onclick="nav('learn')">
+      <div class="card-body" style="background:var(--dark);border-radius:var(--r)">
+        <div style="font-size:var(--fs-label);color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px" id="home-task-kap">Kapitel 1</div>
+        <div style="font-size:var(--fs-title);font-weight:700;color:#fff;margin-bottom:4px" id="home-task-title">Was ist Geld?</div>
+        <div style="font-size:var(--fs-sub);color:rgba(255,255,255,.5)" id="home-task-sub">4 Karten · ca. 4 Min</div>
+        <div style="width:28px;height:28px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:10px"><i class="ti ti-chevron-right" style="font-size:16px;color:#fff"></i></div>
+      </div>
+    </div>
+    <div class="section-lbl">Meine Konten <span style="font-size:9px;background:var(--warn-l);color:#92400e;padding:2px 7px;border-radius:10px;font-weight:700;margin-left:4px">DEMO</span></div>
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--border)">
+        <div style="width:36px;height:36px;border-radius:9px;background:#E6F1FB;display:flex;align-items:center;justify-content:center"><i class="ti ti-building-bank" style="font-size:18px;color:#185FA5"></i></div>
+        <div style="flex:1"><div style="font-size:var(--fs-body);font-weight:600;color:var(--dark)">Jugendkonto</div><div style="font-size:var(--fs-label);color:var(--light)">CH56 0785 1234 5678 9000 0</div></div>
+        <div style="font-size:var(--fs-body);font-weight:700;color:var(--dark)" id="home-konto-bal">CHF 1'247.50</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 14px">
+        <div style="width:36px;height:36px;border-radius:9px;background:#FFF3CD;display:flex;align-items:center;justify-content:center"><i class="ti ti-piggy-bank" style="font-size:18px;color:#854F0B"></i></div>
+        <div style="flex:1"><div style="font-size:var(--fs-body);font-weight:600;color:var(--dark)">Sparkonto Jugend</div><div style="font-size:var(--fs-label);color:var(--light)">CH56 0785 1234 5678 9001 0</div></div>
+        <div style="font-size:var(--fs-body);font-weight:700;color:var(--dark)" id="home-spar-bal">CHF 2'500.00</div>
+      </div>
+    </div>
+    <div class="tip-card"><div class="tip-lbl">Tipp</div><div class="tip-text" id="home-tip">Zahle dich zuerst: 10% des Lohns sofort aufs Sparkonto.</div></div>
+    <div style="height:10px"></div>
+  </div></div>
 
-  <div class="view" id="view-learn">
-    <div class="scroll-area">
-      <div class="card" style="margin:14px 16px 10px">
-        <div class="card-body">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-            <span style="font-size:var(--fs-body);font-weight:700;color:var(--dark)">Gesamtfortschritt</span>
-            <span style="font-size:var(--fs-body);font-weight:700;color:var(--red)" id="learn-progress-lbl">0 / 5 Kapitel</span>
-          </div>
-          <div class="prog-wrap"><div class="prog-fill" id="learn-progress-bar" style="width:0%"></div></div>
-        </div>
+  <div class="view" id="view-learn"><div class="scroll-area">
+    <div class="card" style="margin:14px 16px 10px"><div class="card-body">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <span style="font-size:var(--fs-body);font-weight:700;color:var(--dark)">Gesamtfortschritt</span>
+        <span style="font-size:var(--fs-body);font-weight:700;color:var(--red)" id="learn-progress-lbl">0 / 5 Kapitel</span>
       </div>
-      <div class="section-lbl">BLKB Finanzcoach</div>
-      <div class="age-toggle">
-        <button class="age-btn active" data-age="kind" onclick="aiSetAge('kind')">Kind</button>
-        <button class="age-btn" data-age="teen" onclick="aiSetAge('teen')">Teen</button>
-        <button class="age-btn" data-age="erwachsen" onclick="aiSetAge('erwachsen')">Erwachsen</button>
-      </div>
-      <div class="ai-chat-box">
-        <div class="ai-messages" id="aiMessages">
-          <div class="ai-bubble coach"><div class="ai-badge-lbl">BLKB Coach</div><span id="aiWelcome">Hoi! Was möchtest du über Geld wissen? 😊</span></div>
-        </div>
-        <div class="ai-input-row">
-          <input type="text" id="aiInput" placeholder="Stell deine Frage..." onkeydown="if(event.key==='Enter')aiSend()">
-          <button class="ai-send-btn" onclick="aiSend()" aria-label="Senden"><i class="ti ti-send"></i></button>
-        </div>
-      </div>
-      <div class="chip-row">
-        <button class="chip active" onclick="aiAskTopic('Sparen')">Sparen</button>
-        <button class="chip" onclick="aiAskTopic('Anlegen')">Anlegen</button>
-        <button class="chip" onclick="aiAskTopic('Karten und TWINT')">Karten</button>
-        <button class="chip" onclick="aiAskTopic('Budget')">Budget</button>
-        <button class="chip" onclick="aiAskTopic('Säule 3a')">3. Säule</button>
-      </div>
-      <div class="section-lbl">Kapitel</div>
-      <div id="learn-chapters"></div>
-      <div style="height:10px"></div>
+      <div class="prog-wrap"><div class="prog-fill" id="learn-progress-bar" style="width:0%"></div></div>
+    </div></div>
+    <div class="section-lbl">BLKB Finanzcoach</div>
+    <div class="age-toggle">
+      <button class="age-btn active" data-age="kind" onclick="aiSetAge('kind')">Kind</button>
+      <button class="age-btn" data-age="teen" onclick="aiSetAge('teen')">Teen</button>
+      <button class="age-btn" data-age="erwachsen" onclick="aiSetAge('erwachsen')">Erwachsen</button>
     </div>
-  </div>
+    <div class="ai-chat-box">
+      <div class="ai-messages" id="aiMessages">
+        <div class="ai-bubble coach"><div class="ai-badge-lbl">BLKB Coach</div><span id="aiWelcome">Hoi! Was möchtest du über Geld wissen? 😊</span></div>
+      </div>
+      <div class="ai-input-row">
+        <input type="text" id="aiInput" placeholder="Stell deine Frage..." onkeydown="if(event.key==='Enter')aiSend()">
+        <button class="ai-send-btn" onclick="aiSend()" aria-label="Senden"><i class="ti ti-send"></i></button>
+      </div>
+    </div>
+    <div class="chip-row">
+      <button class="chip active" onclick="aiAskTopic('Sparen')">Sparen</button>
+      <button class="chip" onclick="aiAskTopic('Anlegen')">Anlegen</button>
+      <button class="chip" onclick="aiAskTopic('Karten und TWINT')">Karten</button>
+      <button class="chip" onclick="aiAskTopic('Budget')">Budget</button>
+      <button class="chip" onclick="aiAskTopic('Säule 3a')">3. Säule</button>
+    </div>
+    <div class="section-lbl">Kapitel</div>
+    <div id="learn-chapters"></div>
+    <div style="height:10px"></div>
+  </div></div>
 
-  <div class="view" id="view-goals">
-    <div class="scroll-area">
-      <div class="hero-card">
-        <div class="hero-lbl">Sparkonto-Guthaben · BLKB</div>
-        <div class="hero-amt" id="spar-total">CHF 2'500</div>
-        <div class="hero-sub">Simulierter Kontostand · Demo</div>
-      </div>
-      <div class="card" style="margin:0 16px 10px">
-        <div class="card-body">
-          <div style="display:flex;justify-content:space-between;margin-bottom:8px">
-            <span style="font-size:var(--fs-sub);color:var(--mid)">Gesamtfortschritt Ziele</span>
-            <span style="font-size:var(--fs-sub);font-weight:700;color:var(--dark)" id="goals-total-lbl">CHF 0 / 0</span>
-          </div>
-          <div class="prog-wrap"><div class="prog-fill" id="goals-total-bar" style="width:0%"></div></div>
-        </div>
-      </div>
-      <div class="section-lbl">Meine Ziele</div>
-      <div id="goals-list"></div>
-      <button class="btn-outline" style="margin:0 16px;width:calc(100% - 32px)" onclick="openGoalModal()">+ Neues Sparziel</button>
-      <div style="height:10px"></div>
+  <div class="view" id="view-goals"><div class="scroll-area">
+    <div class="hero-card">
+      <div class="hero-lbl">Sparkonto-Guthaben · BLKB</div>
+      <div class="hero-amt" id="spar-total">CHF 2'500</div>
+      <div class="hero-sub">Simulierter Kontostand · Demo</div>
     </div>
-  </div>
+    <div class="card" style="margin:0 16px 10px"><div class="card-body">
+      <div style="display:flex;justify-content:space-between;margin-bottom:8px">
+        <span style="font-size:var(--fs-sub);color:var(--mid)">Gesamtfortschritt Ziele</span>
+        <span style="font-size:var(--fs-sub);font-weight:700;color:var(--dark)" id="goals-total-lbl">CHF 0 / 0</span>
+      </div>
+      <div class="prog-wrap"><div class="prog-fill" id="goals-total-bar" style="width:0%"></div></div>
+    </div></div>
+    <div class="section-lbl">Meine Ziele</div>
+    <div id="goals-list"></div>
+    <button class="btn-outline" style="margin:0 16px;width:calc(100% - 32px)" onclick="openGoalModal()">+ Neues Sparziel</button>
+    <div style="height:10px"></div>
+  </div></div>
 
-  <div class="view" id="view-hero">
-    <div class="scroll-area">
-      <div class="xp-card">
-        <div class="xp-level">🔥 <span id="hero-streak-days">1</span> Tage in Folge</div>
-        <div class="xp-name" id="hero-level-name">Money-Macher</div>
-        <div style="font-size:var(--fs-sub);color:rgba(255,255,255,.5);margin-top:2px"><span id="hero-xp">205</span> XP · Level <span id="hero-level">3</span></div>
-        <div class="xp-bar-wrap"><div class="xp-bar-fill" id="hero-xp-bar" style="width:37%"></div></div>
-        <div class="xp-next" id="hero-xp-next">95 XP bis zum nächsten Level</div>
-      </div>
-      <div class="section-lbl">Heute sammeln</div>
-      <div class="card"><div class="card-body" id="hero-daily-tasks"></div></div>
-      <div class="section-lbl">Frage des Tages</div>
-      <div id="hero-quiz-container"></div>
-      <div class="section-lbl">Abzeichen</div>
-      <div class="badge-grid" id="hero-badges"></div>
-      <div style="height:10px"></div>
+  <div class="view" id="view-hero"><div class="scroll-area">
+    <div class="xp-card">
+      <div class="xp-level">🔥 <span id="hero-streak-days">1</span> Tage in Folge</div>
+      <div class="xp-name" id="hero-level-name">Money-Macher</div>
+      <div style="font-size:var(--fs-sub);color:rgba(255,255,255,.5);margin-top:2px"><span id="hero-xp">205</span> XP · Level <span id="hero-level">3</span></div>
+      <div class="xp-bar-wrap"><div class="xp-bar-fill" id="hero-xp-bar" style="width:37%"></div></div>
+      <div class="xp-next" id="hero-xp-next">95 XP bis zum nächsten Level</div>
     </div>
-  </div>
+    <div class="section-lbl">Heute sammeln</div>
+    <div class="card"><div class="card-body" id="hero-daily-tasks"></div></div>
+    <div class="section-lbl">Frage des Tages</div>
+    <div id="hero-quiz-container"></div>
+    <div class="section-lbl">Abzeichen</div>
+    <div class="badge-grid" id="hero-badges"></div>
+    <div style="height:10px"></div>
+  </div></div>
 
-  <div class="view" id="view-haxx">
-    <div class="scroll-area">
-      <div style="padding:14px 16px 4px">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-          <span style="font-size:var(--fs-sub);font-weight:700;color:var(--dark)">Dein Fortschritt</span>
-          <span style="font-size:var(--fs-sub);font-weight:700;color:var(--red)" id="haxx-progress-lbl">0 von 6 verstanden</span>
-        </div>
-        <div class="prog-wrap"><div class="prog-fill" id="haxx-progress-bar" style="width:0%"></div></div>
+  <div class="view" id="view-haxx"><div class="scroll-area">
+    <div style="padding:14px 16px 4px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <span style="font-size:var(--fs-sub);font-weight:700;color:var(--dark)">Dein Fortschritt</span>
+        <span style="font-size:var(--fs-sub);font-weight:700;color:var(--red)" id="haxx-progress-lbl">0 von 6 verstanden</span>
       </div>
-      <div class="section-lbl">6 Hacks · Sofort umsetzbar</div>
-      <div id="haxx-list"></div>
-      <div style="height:10px"></div>
+      <div class="prog-wrap"><div class="prog-fill" id="haxx-progress-bar" style="width:0%"></div></div>
     </div>
-  </div>
+    <div class="section-lbl">6 Hacks · Sofort umsetzbar</div>
+    <div id="haxx-list"></div>
+    <div style="height:10px"></div>
+  </div></div>
 
   <nav class="bottom-nav">
     <button class="nav-btn active" id="nav-home" onclick="nav('home')"><i class="ti ti-home nav-icon"></i><span class="nav-label">Start</span></button>
@@ -200,7 +178,80 @@
     <button class="btn-primary" onclick="saveGoal()">Sparziel erstellen</button>
   </div>
 </div>
+
 <div class="toast" id="toast"></div>
+
+<div id="onboarding" style="position:fixed;inset:0;z-index:1000;background:#1A1A1A;display:flex;flex-direction:column;max-width:430px;margin:0 auto">
+  <div style="display:flex;justify-content:center;gap:6px;padding:52px 0 0">
+    <div class="ob-dot active" id="ob-dot-0"></div>
+    <div class="ob-dot" id="ob-dot-1"></div>
+    <div class="ob-dot" id="ob-dot-2"></div>
+  </div>
+  <div style="flex:1;overflow:hidden;position:relative">
+    <div class="ob-screen active" id="ob-0"><div style="padding:40px 28px 0">
+      <div style="width:72px;height:72px;background:#E30613;border-radius:18px;display:flex;align-items:center;justify-content:center;margin-bottom:24px"><i class="ti ti-building-bank" style="font-size:36px;color:#fff" aria-hidden="true"></i></div>
+      <div style="font-size:28px;font-weight:700;color:#fff;line-height:1.2;margin-bottom:12px">Willkommen bei BLKB Jugend</div>
+      <div style="font-size:15px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:32px">Deine App für Finanzwissen, Sparziele und deinen Weg zur Finanzfreiheit.</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.06);border-radius:12px;padding:12px 14px"><div style="width:36px;height:36px;background:#E30613;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ti ti-eye" style="font-size:18px;color:#fff" aria-hidden="true"></i></div><div><div style="font-size:13px;font-weight:600;color:#fff">Kontostand live</div><div style="font-size:12px;color:rgba(255,255,255,.5)">Immer aktuell von BLKB</div></div></div>
+        <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.06);border-radius:12px;padding:12px 14px"><div style="width:36px;height:36px;background:#E30613;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ti ti-target" style="font-size:18px;color:#fff" aria-hidden="true"></i></div><div><div style="font-size:13px;font-weight:600;color:#fff">Sparziele planen</div><div style="font-size:12px;color:rgba(255,255,255,.5)">Fiktiv auf dein echtes Guthaben</div></div></div>
+        <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.06);border-radius:12px;padding:12px 14px"><div style="width:36px;height:36px;background:#E30613;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ti ti-trophy" style="font-size:18px;color:#fff" aria-hidden="true"></i></div><div><div style="font-size:13px;font-weight:600;color:#fff">Finanzwissen aufbauen</div><div style="font-size:12px;color:rgba(255,255,255,.5)">Lektionen, Quiz und Abzeichen</div></div></div>
+      </div>
+    </div></div>
+    <div class="ob-screen" id="ob-1"><div style="padding:40px 28px 0">
+      <div style="width:72px;height:72px;background:rgba(255,255,255,.08);border-radius:18px;display:flex;align-items:center;justify-content:center;margin-bottom:24px"><i class="ti ti-pig-money" style="font-size:36px;color:#E30613" aria-hidden="true"></i></div>
+      <div style="font-size:28px;font-weight:700;color:#fff;line-height:1.2;margin-bottom:12px">Dein Guthaben</div>
+      <div style="font-size:15px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:28px">Gib deinen aktuellen Kontostand ein. In der echten App kommt dieser direkt von BLKB.</div>
+      <div style="margin-bottom:16px">
+        <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:rgba(255,255,255,.4);margin-bottom:8px">Jugendkonto (CHF)</div>
+        <input type="number" id="ob-konto" value="1247" style="width:100%;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.15);border-radius:10px;padding:13px 14px;font-size:20px;font-weight:600;color:#fff;font-family:var(--font);outline:none" onfocus="this.style.borderColor='#E30613'" onblur="this.style.borderColor='rgba(255,255,255,.15)'">
+      </div>
+      <div style="margin-bottom:28px">
+        <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:rgba(255,255,255,.4);margin-bottom:8px">Sparkonto (CHF)</div>
+        <input type="number" id="ob-spar" value="2500" style="width:100%;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.15);border-radius:10px;padding:13px 14px;font-size:20px;font-weight:600;color:#fff;font-family:var(--font);outline:none" onfocus="this.style.borderColor='#E30613'" onblur="this.style.borderColor='rgba(255,255,255,.15)'">
+      </div>
+      <div style="background:rgba(255,255,255,.06);border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:10px"><i class="ti ti-info-circle" style="font-size:18px;color:rgba(255,255,255,.4);flex-shrink:0" aria-hidden="true"></i><div style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.4">Kein Geld wird bewegt. Die App zeigt nur deinen Stand — du planst virtuell darauf.</div></div>
+    </div></div>
+    <div class="ob-screen" id="ob-2"><div style="padding:40px 28px 0">
+      <div style="width:72px;height:72px;background:rgba(255,255,255,.08);border-radius:18px;display:flex;align-items:center;justify-content:center;margin-bottom:24px"><i class="ti ti-star" style="font-size:36px;color:#E30613" aria-hidden="true"></i></div>
+      <div style="font-size:28px;font-weight:700;color:#fff;line-height:1.2;margin-bottom:12px">Dein erstes Sparziel</div>
+      <div style="font-size:15px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:24px">Wofür sparst du? Wähle ein Icon und gib deinen Traum ein.</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:16px">
+        <button class="ob-icon-btn sel" onclick="obSelectIcon('✈️',this)">✈️<span>Ferien</span></button>
+        <button class="ob-icon-btn" onclick="obSelectIcon('🚲',this)">🚲<span>Velo</span></button>
+        <button class="ob-icon-btn" onclick="obSelectIcon('💻',this)">💻<span>Laptop</span></button>
+        <button class="ob-icon-btn" onclick="obSelectIcon('🎮',this)">🎮<span>Gaming</span></button>
+        <button class="ob-icon-btn" onclick="obSelectIcon('📱',this)">📱<span>Handy</span></button>
+        <button class="ob-icon-btn" onclick="obSelectIcon('🚗',this)">🚗<span>Führerschein</span></button>
+        <button class="ob-icon-btn" onclick="obSelectIcon('👟',this)">👟<span>Schuhe</span></button>
+        <button class="ob-icon-btn" onclick="obSelectIcon('🌍',this)">🌍<span>Weltreise</span></button>
+      </div>
+      <div style="margin-bottom:12px">
+        <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:rgba(255,255,255,.4);margin-bottom:8px">Name des Ziels</div>
+        <input type="text" id="ob-goal-name" placeholder="z.B. E-Bike, Ferien, Laptop..." style="width:100%;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.15);border-radius:10px;padding:13px 14px;font-size:15px;color:#fff;font-family:var(--font);outline:none" onfocus="this.style.borderColor='#E30613'" onblur="this.style.borderColor='rgba(255,255,255,.15)'">
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:rgba(255,255,255,.4);margin-bottom:8px">Zielbetrag (CHF)</div>
+        <input type="number" id="ob-goal-amt" placeholder="z.B. 500" style="width:100%;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.15);border-radius:10px;padding:13px 14px;font-size:20px;font-weight:600;color:#fff;font-family:var(--font);outline:none" onfocus="this.style.borderColor='#E30613'" onblur="this.style.borderColor='rgba(255,255,255,.15)'">
+      </div>
+    </div></div>
+  </div>
+  <div style="padding:16px 28px max(env(safe-area-inset-bottom),24px)">
+    <button id="ob-next-btn" onclick="obNext()" style="width:100%;padding:15px;background:#E30613;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:var(--font)">Los geht's</button>
+    <button id="ob-skip-btn" onclick="obSkip()" style="width:100%;padding:10px;background:transparent;color:rgba(255,255,255,.3);border:none;font-size:13px;cursor:pointer;font-family:var(--font);margin-top:4px">Überspringen</button>
+  </div>
+</div>
+
+<style>
+.ob-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);transition:all .3s}
+.ob-dot.active{width:20px;border-radius:3px;background:#E30613}
+.ob-screen{display:none;position:absolute;inset:0;overflow-y:auto}
+.ob-screen::-webkit-scrollbar{display:none}
+.ob-screen.active{display:block}
+.ob-icon-btn{border-radius:10px;border:1.5px solid transparent;background:rgba(255,255,255,.06);padding:10px 4px 8px;font-size:22px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;font-family:var(--font)}
+.ob-icon-btn span{font-size:9px;color:rgba(255,255,255,.5)}
+.ob-icon-btn.sel{border-color:#E30613;background:rgba(227,6,19,.15)}
+</style>
 <script src="app.js"></script>
 </body>
 </html>
